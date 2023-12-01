@@ -86,7 +86,7 @@ export default class Program implements ProgramDefinition {
         return coordinates[square] || { x: 0, y: 0 };
     }
 
-    async runPart1(input: string[]) {
+    runPart1(input: string[]) {
         const square = this.parseInput(input);
         const coordinates = this.getCoordinatesForSquare(square);
 
@@ -117,7 +117,7 @@ export default class Program implements ProgramDefinition {
             .reduce((sum, value) => sum + value, 0);
     }
 
-    async runPart2(input: string[]) {
+    runPart2(input: string[]) {
         const targetValue = this.parseInput(input);
         const coordinateValues: CoordinateValue[] = [];
 
