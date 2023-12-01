@@ -37,7 +37,7 @@ export default class Program implements ProgramDefinition {
         return Math.abs(a - b);
     }
 
-    async runPart1(input: string[]) {
+    runPart1(input: string[]) {
         const data = this.parseInput(input);
 
         return data.reduce((sum, row) => {
@@ -47,7 +47,7 @@ export default class Program implements ProgramDefinition {
         }, 0);
     }
 
-    async runPart2(input: string[]) {
+    runPart2(input: string[]) {
         const data = this.parseInput(input);
 
         return data.reduce((sum, row) => {

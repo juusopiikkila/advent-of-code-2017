@@ -13,14 +13,20 @@ describe('Part 1', () => {
         program = new Program();
     });
 
-    it('difference of 1 & 9 should be 8', async () => {
-        const output = await program.getDifference(1, 9);
+    it('non-divisible numbers should throw error', () => {
+        expect(() => {
+            program.getEvenlyDivisibleNumbers([3]);
+        }).toThrow('No evenly divisible numbers found');
+    });
+
+    it('difference of 1 & 9 should be 8', () => {
+        const output = program.getDifference(1, 9);
 
         expect(output).toEqual(8);
     });
 
-    it('largest and smallest number of 5,1,9,5 should be 1 & 9', async () => {
-        const output = await program.getHighestAndLowestNumber([5, 1, 9, 5]);
+    it('largest and smallest number of 5,1,9,5 should be 1 & 9', () => {
+        const output = program.getHighestAndLowestNumber([5, 1, 9, 5]);
 
         expect(output).toEqual({
             highest: 9,
@@ -28,8 +34,8 @@ describe('Part 1', () => {
         });
     });
 
-    it('checksum should be 18', async () => {
-        const output = await program.runPart1(input);
+    it('checksum should be 18', () => {
+        const output = program.runPart1(input);
 
         expect(output).toEqual(18);
     });
@@ -47,14 +53,14 @@ describe('Part 2', () => {
         program = new Program();
     });
 
-    it('divisible numbers of 5, 9, 2, 8 should be 8 & 2', async () => {
-        const output = await program.getEvenlyDivisibleNumbers([5, 9, 2, 8]);
+    it('divisible numbers of 5, 9, 2, 8 should be 8 & 2', () => {
+        const output = program.getEvenlyDivisibleNumbers([5, 9, 2, 8]);
 
         expect(output).toEqual([8, 2]);
     });
 
-    it('checksum should be 18', async () => {
-        const output = await program.runPart2(input);
+    it('checksum should be 18', () => {
+        const output = program.runPart2(input);
 
         expect(output).toEqual(9);
     });
