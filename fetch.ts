@@ -4,7 +4,7 @@ import minimist from 'minimist';
 
 const argv = minimist(process.argv.slice(2));
 
-const year = (new Date()).getFullYear();
+const year = process.env.YEAR || (new Date()).getFullYear();
 const day = argv.day || (new Date()).getDate();
 const sessionToken = process.env.SESSION_TOKEN;
 
